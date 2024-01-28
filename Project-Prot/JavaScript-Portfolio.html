@@ -1,0 +1,120 @@
+<script>
+    function scrollToSection(sectionId) {
+    if (sectionId === 'home-section') {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    } else {
+      const section = document.getElementById(sectionId);
+      section.scrollIntoView({
+        behavior: 'smooth'
+      });
+    }
+  }
+
+  function updateActiveClass(clickedElement) {
+    document.querySelectorAll('.header-element').forEach(element => {
+      element.classList.remove('active');
+    });
+	
+    clickedElement.classList.add('active');
+  }
+  
+  function scrollToSkills() {
+    const skillsSection = document.getElementById('skills-section');
+    scrollToSection(skillsSection.id);
+    
+  }
+ 
+    document.addEventListener("DOMContentLoaded", function () {
+      const percentage = 90;
+
+      const progressBar = document.getElementById('myProgressBar');
+	  
+	  const progressLabel = document.getElementById('progressLabel');
+
+
+      progressBar.style.width = `${percentage}%`;
+	  
+	   progressLabel.textContent = `${percentage}%`;
+	  
+      const percentage2 = 93;
+
+      const progressBar2 = document.getElementById('myProgressBar2');
+	  
+	  const progressLabel2 = document.getElementById('progressLabel2');
+
+   
+      progressBar2.style.width = `${percentage2}%`;
+	  
+	  progressLabel2.textContent = `${percentage2}%`;
+
+
+
+      const percentage3 = 85;
+
+      const progressBar3 = document.getElementById('myProgressBar3');
+	  
+	  const progressLabel3 = document.getElementById('progressLabel3');
+
+
+      progressBar3.style.width = `${percentage3}%`;
+	  
+	  progressLabel3.textContent = `${percentage3}%`;
+	   
+	   
+      const percentage4 = 95;
+
+      const progressBar4 = document.getElementById('myProgressBar4');
+	  
+	  const progressLabel4 = document.getElementById('progressLabel4');
+
+
+       
+      progressBar4.style.width = `${percentage4}%`;
+	  
+	  progressLabel4.textContent = `${percentage4}%`;
+	  
+
+      const percentage5 = 85;
+
+      const progressBar5 = document.getElementById('myProgressBar5');
+	  
+	  const progressLabel5 = document.getElementById('progressLabel5');
+
+
+      progressBar5.style.width = `${percentage5}%`;
+	  
+	  progressLabel5.textContent = `${percentage5}%`;
+	  
+
+      const percentage6 = 97;
+
+      const progressBar6 = document.getElementById('myProgressBar6');
+	  
+	  const progressLabel6 = document.getElementById('progressLabel6');
+
+
+      progressBar6.style.width = `${percentage6}%`;
+	  
+	  progressLabel6.textContent = `${percentage6}%`;
+
+
+     document.querySelectorAll('.header-element').forEach(element => {
+      element.addEventListener('click', function (event) {
+        event.preventDefault();
+        const sectionId = this.getAttribute('data-section');
+        scrollToSection(sectionId);
+        updateActiveClass(this);
+      });
+    });
+
+     
+    const skillsHeaderElement = document.querySelector('.nav-item.Skills');
+    skillsHeaderElement.addEventListener('click', function (event) {
+      event.preventDefault();
+      scrollToSkills();
+    });
+  });
+  </script>
